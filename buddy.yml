@@ -10,6 +10,7 @@
     execute_commands:
     - "dotnet test src/test/*/*.csproj"
     trigger_condition: "ALWAYS"
+    disable: true
 
   - action: "Create version.json file"
     type: "BUILD"
