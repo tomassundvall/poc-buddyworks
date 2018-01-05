@@ -10,8 +10,7 @@
     execute_commands:
     - "dotnet test src/test/*/*.csproj"
     trigger_condition: "ALWAYS"
-  
-  actions:
+
   - action: "Create version.json file"
     type: "BUILD"
     docker_image_name: "library/ubuntu"
