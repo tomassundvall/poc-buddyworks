@@ -1,6 +1,7 @@
 - pipeline: "Master"
   trigger_mode: "MANUAL"
   ref_name: "master"
+  actions:
 
   - action: "Run unittests"
     type: "BUILD"
