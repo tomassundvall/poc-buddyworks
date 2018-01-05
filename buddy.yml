@@ -17,7 +17,7 @@
     docker_image_name: "library/ubuntu"
     docker_image_tag: "16.04"
     execute_commands:
-    - "echo \"{\\\"Version\\\":${base_version}.${execution.id},\\\"LastRevision:\\\":${execution.pipeline.last_execution_revision},\\\"BranchName:\\\":${execution.branch.name}} > version.json"
+    - "echo \"{\"Version\":${base_version}.${execution.id},\"LastRevision:\":${execution.pipeline.last_execution_revision},\"BranchName:\":${execution.branch.name}} > version.json"
     trigger_condition: "ALWAYS"
 
   - action: "Build Docker image"
