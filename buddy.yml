@@ -18,7 +18,7 @@
     docker_image_tag: "16.04"
     execute_commands:
     # - 'printf {"Version":"%s","LastRevision":"%s","BranchName":"%s"} "${base_version}.${execution.id}" "${execution.pipeline.last_execution_revision}" "${execution.branch.name}" > version.json'
-    - 'printf "{"\"Version\"":\""%s\""}" 10 > version.json'
+    - 'printf "{"\"Version\"":\""%s.%s\"","\"LastRevision\"":\""%s\"","\"Branch\"":\""%s\""}" ${base_version} ${execution.id} ${execution.pipeline.last_execution_revision} ${execution.branch.name} > version.json'
     trigger_condition: "ALWAYS"
 
   - action: "Build Docker image"
