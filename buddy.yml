@@ -17,12 +17,13 @@
     docker_image_name: "library/ubuntu"
     docker_image_tag: "16.04"
     execute_commands:
-    - ''printf '{"Version":"%s","LastRevision":"%s","BranchName":"%s"}\n' "${base_version}.${execution.id}" "${execution.pipeline.last_execution_revision}" "${execution.branch.name}" > version.json''
+    # - 'printf {"Version":"%s","LastRevision":"%s","BranchName":"%s"} "${base_version}.${execution.id}" "${execution.pipeline.last_execution_revision}" "${execution.branch.name}" > version.json'
+    - 'printf "{"\"Version\"":\""%s\""}" 10 > version.json'
     trigger_condition: "ALWAYS"
 
   - action: "Build Docker image"
     type: "DOCKERFILE"
-    disabled: true
+    
     login: "tomassundvall"
     password: ${docker-repo-pswd}
     docker_image_tag: "${base_version}.${execution.id}"
