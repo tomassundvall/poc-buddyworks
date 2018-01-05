@@ -5,12 +5,12 @@
 
   - action: "Run unittests"
     type: "BUILD"
+    disabled: true
     docker_image_name: "microsoft/aspnetcore-build"
     docker_image_tag: "2.0.3"
     execute_commands:
     - "dotnet test src/test/*/*.csproj"
     trigger_condition: "ALWAYS"
-    disable: true
 
   - action: "Create version.json file"
     type: "BUILD"
