@@ -13,7 +13,7 @@ namespace api.Controllers
     public class VersionController : Controller
     {
         private const string VersionIdentifier = "Version";
-        private const string LastCommitIdentifier = "LastCommit";
+        private const string LastCommitIdentifier = "LastRevision";
 
         private ILogger _logger;
         private IHostingEnvironment _hostEnv;
@@ -39,7 +39,7 @@ namespace api.Controllers
 
             return new Dictionary<string, string>{
                 {"Version", version},
-                {"LastCommit:", lastCommit}
+                {"LastRevision:", lastCommit}
             };
         }
     }
