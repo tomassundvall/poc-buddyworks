@@ -13,7 +13,7 @@ namespace api.Controllers
     public class VersionController : Controller
     {
         private const string VersionIdentifier = "Version";
-        private const string LastCommitIdentifier = "LastRevision";
+        private const string LastRevisionIdentifier = "LastRevision";
 
         private ILogger _logger;
         private IHostingEnvironment _hostEnv;
@@ -30,7 +30,7 @@ namespace api.Controllers
         public Dictionary<string, string> Get()
         {
             var version = _config[VersionIdentifier];
-            var lastCommit = _config[LastCommitIdentifier];
+            var lastCommit = _config[LastRevisionIdentifier];
 
             if ((version == null || lastCommit == null) && !_hostEnv.IsDevelopment())
             {

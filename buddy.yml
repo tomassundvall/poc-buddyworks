@@ -25,8 +25,7 @@
     trigger_condition: "ALWAYS"
 
   - action: "Build Docker image"
-    type: "DOCKERFILE"
-    
+    type: "DOCKERFILE"    
     login: "tomassundvall"
     password: ${docker-repo-pswd}
     docker_image_tag: "${base_version}.${execution.id}"
